@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Máquina Enigma</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+
+    <link rel="shortcut icon" href="imagens/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" href="css/abas.css" />
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <script type="text/javascript" src="scripts/abas.js"></script>
+  </head>
+
+  <body>
+    <div id="divFora">
+      <div id="divDentro1">
+        <div class="linha">
+          <div class="box-250">
+            <div class="box-titulo">Rotor 1</div>
+            <div class="box-conteudo-250">
+              <input type="radio" name="rotor1" id="r1c1" value="0" checked />
+              <label for="r1c1">Configuração 1</label>
+              <br />
+
+              <input type="radio" name="rotor1" id="r1c2" value="1" />
+              <label for="r1c2">Configuração 2</label>
+              <br />
+
+              <input type="radio" name="rotor1" id="r1c3" value="2" />
+              <label for="r1c3">Configuração 3</label>
+              <br />
+
+              <input type="radio" name="rotor1" id="r1c4" value="3" />
+              <label for="r1c4">Configuração 4</label>
+              <br />
+
+              <input type="radio" name="rotor1" id="r1c5" value="4" />
+              <label for="r1c5">Configuração 5</label>
+              <br />
+
+              <label for="posicao1">Posição</label><br />
+              <input
+                id="posicao1"
+                name="posicao1"
+                type="number"
+                min="0"
+                max="26"
+                value="0"
+                required
+                autofocus
+              />
+            </div>
+          </div>
+
+          <div class="box-250">
+            <div class="box-titulo">Rotor 2</div>
+            <div class="box-conteudo-250">
+              <input type="radio" name="rotor2" id="r2c1" value="0" />
+              <label for="r2c1">Configuração 1</label>
+              <br />
+
+              <input type="radio" name="rotor2" id="r2c2" value="1" checked />
+              <label for="r2c2">Configuração 2</label>
+              <br />
+
+              <input type="radio" name="rotor2" id="r2c3" value="2" />
+              <label for="r2c3">Configuração 3</label>
+              <br />
+
+              <input type="radio" name="rotor2" id="r2c4" value="3" />
+              <label for="r2c4">Configuração 4</label>
+              <br />
+
+              <input type="radio" name="rotor2" id="r2c5" value="4" />
+              <label for="r2c5">Configuração 5</label>
+              <br />
+
+              <label for="posicao2">Posição</label><br />
+              <input
+                id="posicao2"
+                name="posicao2"
+                type="number"
+                min="0"
+                max="26"
+                value="0"
+                required
+                autofocus
+              />
+            </div>
+          </div>
+
+          <div class="box-250">
+            <div class="box-titulo">Rotor 3</div>
+            <div class="box-conteudo-250">
+              <input type="radio" name="rotor3" id="r3c1" value="0" />
+              <label for="r3c1">Configuração 1</label>
+              <br />
+
+              <input type="radio" name="rotor3" id="r3c2" value="1" />
+              <label for="r3c2">Configuração 2</label>
+              <br />
+
+              <input type="radio" name="rotor3" id="r3c3" value="2" checked />
+              <label for="r3c3">Configuração 3</label>
+              <br />
+
+              <input type="radio" name="rotor3" id="r3c4" value="3" />
+              <label for="r3c4">Configuração 4</label>
+              <br />
+
+              <input type="radio" name="rotor3" id="r3c5" value="4" />
+              <label for="r3c5">Configuração 5</label>
+              <br />
+
+              <label for="posicao3">Posição</label><br />
+              <input
+                id="posicao3"
+                name="posicao3"
+                type="number"
+                min="0"
+                max="26"
+                value="0"
+                required
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fim .linha -->
+
+        <div class="linha">
+          <button
+            id="salvaRotores"
+            type="button"
+            class="botao-processar"
+            onClick="salvaRotores()"
+          >
+            Salvar Rotores
+          </button>
+        </div>
+        <!-- Fim .linha -->
+
+        <!-- Mensagens ao utilizador -->
+        <div class="linha">
+          <div id="caixaMensagemRotores" class="caixa-de-mensagens">
+            <p>Testando</p>
+          </div>
+        </div>
+      </div>
+      <!-- Fim #divDentro1 -->
+
+      <div id="divDentro2">
+        <div class="linha">
+          <div class="box-1000">
+            <div class="box-titulo">Plugs</div>
+            <div class="box-conteudo-1000">
+              <button id="addPlug" type="button" onClick="addPlug()">
+                + Plug
+              </button>
+              <button id="remPlug" type="button" onClick="remPlug()">
+                - Plug
+              </button>
+              <div id="plugs"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Fim .linha -->
+
+        <div class="linha">
+          <button
+            id="salvaPlugs"
+            name="salvaPlugs"
+            type="button"
+            class="botao-processar"
+            onClick="salvaPlugs()"
+          >
+            Salvar Plugs
+          </button>
+        </div>
+        <!-- Fim .linha -->
+
+        <!-- Mensagens ao utilizador -->
+        <div class="linha">
+          <div id="caixaMensagemPlugs" class="caixa-de-mensagens">
+            <p>Testando</p>
+          </div>
+        </div>
+      </div>
+      <!-- Fim #divDentro2 -->
+
+      <div id="divDentro3">
+        <div id="caixaMudancaContextoTeclado">
+          <label for="ativaDescriptografarTeclado">
+            <input
+              id="ativaDescriptografarTeclado"
+              type="checkbox"
+            />Descriptografar</label
+          >
+        </div>
+
+        <div class="teclado">
+          <div class="linha">
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('1')"
+            >
+              1
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('2')"
+            >
+              2
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('3')"
+            >
+              3
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('4')"
+            >
+              4
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('5')"
+            >
+              5
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('6')"
+            >
+              6
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('7')"
+            >
+              7
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('8')"
+            >
+              8
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('9')"
+            >
+              9
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('0')"
+            >
+              0
+            </button>
+          </div>
+
+          <div class="linha">
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('Q')"
+            >
+              Q
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('W')"
+            >
+              W
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('E')"
+            >
+              E
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('R')"
+            >
+              R
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('T')"
+            >
+              T
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('Y')"
+            >
+              Y
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('U')"
+            >
+              U
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('I')"
+            >
+              I
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('O')"
+            >
+              O
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('P')"
+            >
+              P
+            </button>
+          </div>
+
+          <div class="linha">
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('A')"
+            >
+              A
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('S')"
+            >
+              S
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('D')"
+            >
+              D
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('F')"
+            >
+              F
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('G')"
+            >
+              G
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('H')"
+            >
+              H
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('J')"
+            >
+              J
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('K')"
+            >
+              K
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('L')"
+            >
+              L
+            </button>
+          </div>
+
+          <div class="linha">
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('Z')"
+            >
+              Z
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('X')"
+            >
+              X
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('C')"
+            >
+              C
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('V')"
+            >
+              V
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('B')"
+            >
+              B
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('N')"
+            >
+              N
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('M')"
+            >
+              M
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('Enter')"
+            >
+              &crarr;
+            </button>
+          </div>
+
+          <div class="linha">
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual(',')"
+            >
+              ,
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('.')"
+            >
+              .
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('?')"
+            >
+              ?
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('!')"
+            >
+              !
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual(':')"
+            >
+              :
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual(';')"
+            >
+              ;
+            </button>
+            <button
+              type="button"
+              class="botao-circular"
+              onClick="tecladoVirtual('BackSpace')"
+            >
+              &larr;
+            </button>
+          </div>
+
+          <div class="linha">
+            <button
+              type="button"
+              class="botao-circular espaco"
+              onClick="tecladoVirtual(' ')"
+            >
+              ESPAÇO
+            </button>
+          </div>
+        </div>
+
+        <!-- Mensagens ao utilizador -->
+        <div class="linha">
+          <div id="caixaMensagemMaquina1" class="caixa-de-mensagens">
+            <p>Testando</p>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="box-1000">
+            <div class="box-titulo">Texto</div>
+            <div class="box-conteudo-1000">
+              <textarea
+                id="textoTecladoNormal"
+                class="txt-espaco-teclado"
+                readonly
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="box-1000">
+            <div class="box-titulo">Texto Criptografado</div>
+            <div class="box-conteudo-1000">
+              <textarea
+                id="textoTecladoCriptografado"
+                class="txt-espaco-teclado"
+                readonly
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fim #divDentro3 -->
+
+      <div id="divDentro4">
+        <div class="linha">
+          <div class="box-1000">
+            <div class="box-titulo">Texto</div>
+            <div class="box-conteudo-1000">
+              <textarea id="textoNormal" class="txt-espaco-geral"></textarea>
+              <button
+                id="botaoCriptografar"
+                type="button"
+                class="botao-processar"
+                onClick="criptografarTexto()"
+              >
+                Criptografar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mensagens ao utilizador -->
+        <div class="linha">
+          <div id="caixaMensagemMaquina2" class="caixa-de-mensagens">
+            <p>Testando</p>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="box-1000">
+            <div class="box-titulo">Texto Criptografado</div>
+            <div class="box-conteudo-1000">
+              <textarea
+                id="textoCriptografado"
+                class="txt-espaco-geral"
+              ></textarea>
+              <button
+                id="botaoDescriptografar"
+                type="button"
+                class="botao-processar"
+                onClick="descriptografarTexto()"
+              >
+                Descriptografar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fim #divDentro4 -->
+
+      <div id="divDentro5">
+        <div class="linha">
+          <div class="box-1000">
+            <div class="box-conteudo-1000">
+              <p>Selecione um arquivo te texto (*.txt) para processamento!</p>
+
+              <label for="ativaDescriptografarTXT">
+                <input
+                  id="ativaDescriptografarTXT"
+                  type="checkbox"
+                />Descriptografar
+              </label>
+              <br />
+              <input id="inputArquivo" type="file" style="margin-top: 10px" />
+            </div>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="box-1000">
+            <div class="box-titulo">Texto Processado</div>
+            <div id="textoProcessado" class="box-conteudo-1000"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Fim #divDentro5 -->
+    </div>
+
+    <!-- Essa é a estrutura usada como uma Janela Modal -->
+    <div id="modal">
+      <div id="modalConteudo"></div>
+    </div>
+
+    <script type="text/javascript">
+      var aba = new JTabControl("divFora");
+
+      aba.addTab("divDentro1", "Rotores");
+      aba.addTab("divDentro2", "Plugs");
+      aba.addTab("divDentro3", "Máquina 1");
+      aba.addTab("divDentro4", "Máquina 2");
+      aba.addTab("divDentro5", "Máquina 3");
+    </script>
+    <script type="text/javascript" src="scripts/maquina-enigma.js"></script>
+  </body>
+</html>

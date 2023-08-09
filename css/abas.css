@@ -1,0 +1,33 @@
+div.jAbaContainer {
+	padding: 70px 100px;
+}
+div.jAbaHeader {
+	font-size: 17pt;
+	font-weight: 500;
+	height: 27pt;
+}
+div.jAbaBody {
+	border-top: solid 1px #e0e0e0;
+	padding: 0px;
+}
+
+div.jAbaHeader .jTabHeaderHidden {
+	cursor: pointer;
+	color: #0085db;
+	padding: 10px;
+}
+div.jAbaHeader .jTabHeaderInline {
+	cursor: pointer;
+	color: black;
+	padding: 10px;
+	border-top: solid 1px #e0e0e0;
+	border-right: solid 1px #e0e0e0;
+	border-left: solid 1px #e0e0e0;
+}
+div.jAbaBody .jTabBodyHidden {
+	display: none;
+}
+div.jAbaBody .jTabBodyInline {
+	display: inline;
+	padding: 10px;
+}
